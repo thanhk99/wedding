@@ -1,0 +1,144 @@
+.heroSection {
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-ivory);
+}
+
+/* Tối ưu Canvas container */
+.canvasContainer {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    /* Kích hoạt Hardware Acceleration */
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+.overlayGradient {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 10;
+    background: linear-gradient(to bottom, transparent, rgba(248, 244, 239, 0.8));
+}
+
+.contentWrapper {
+    position: relative;
+    z-index: 20;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+    will-change: transform, opacity;
+}
+
+/* Tối ưu Hình ảnh có hiệu ứng 3D */
+.imageCard {
+    position: relative;
+    width: 200px;
+    height: 280px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border-radius: 0;
+    overflow: hidden;
+    border: 8px solid white;
+    margin-bottom: 1.5rem;
+    transform-style: preserve-3d;
+    will-change: transform, opacity;
+}
+
+/* Responsive */
+@media (min-width: 640px) {
+    .imageCard {
+        width: 16rem;
+        /* 256px */
+        height: 20rem;
+        /* 320px */
+    }
+}
+
+@media (min-width: 768px) {
+    .imageCard {
+        width: 20rem;
+        /* 320px */
+        height: 450px;
+        border-width: 12px;
+        border-radius: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Typography styles */
+.badge {
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 10px;
+    margin-bottom: 0.75rem;
+    display: block;
+    background-color: rgba(248, 244, 239, 0.5);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    .badge {
+        letter-spacing: 0.3em;
+        font-size: 0.875rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.title {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-family: var(--font-playfair);
+    margin-bottom: 0.5rem;
+    color: var(--color-wine);
+    font-style: italic;
+    padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+    .title {
+        font-size: 3rem;
+        line-height: 1;
+    }
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: 5rem;
+        line-height: 1;
+    }
+}
+
+.date {
+    color: rgba(114, 47, 55, 0.8);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: var(--font-cormorant);
+    letter-spacing: 0.2em;
+    margin-top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .date {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        letter-spacing: 0.1em;
+        margin-top: 1rem;
+    }
+}
