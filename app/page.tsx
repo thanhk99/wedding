@@ -14,7 +14,9 @@ const EventDetails = dynamic(() => import("./components/sections/EventDetails"),
 const LoveStory = dynamic(() => import("./components/sections/LoveStory"), { ssr: false });
 const Countdown = dynamic(() => import("./components/sections/Countdown"), { ssr: false });
 const RSVP = dynamic(() => import("./components/sections/RSVP"), { ssr: false });
-const Guestbook = dynamic(() => import("./components/sections/Guestbook"), { ssr: false });
+const GiftSection = dynamic(() => import("./components/Gift/GiftSection"), { ssr: false });
+
+
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,9 +50,11 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.5 }}
           >
             <Gallery />
+            <GiftSection />
             <RSVP />
-            <Guestbook />
+
             <Countdown />
+
             <Ending />
           </motion.div>
         </>

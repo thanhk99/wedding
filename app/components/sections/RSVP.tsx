@@ -5,12 +5,31 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Send, User, Users, MessageSquare } from "lucide-react";
 
 export default function RSVP() {
-    const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
+    const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+    const [formData, setFormData] = useState({
+        name: "",
+        guests: "Đi 1 mình",
+        message: ""
+    });
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setStatus("loading");
-        setTimeout(() => setStatus("success"), 2000);
+        try {
+            const res = await fetch("/api/rsvp", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
+            if (res.ok) {
+                setStatus("success");
+                setFormData({ name: "", guests: "Đi 1 mình", message: "" });
+            } else {
+                setStatus("error");
+            }
+        } catch (error) {
+            setStatus("error");
+        }
     };
 
     return (
@@ -42,6 +61,8 @@ export default function RSVP() {
                                                 type="text"
                                                 placeholder="Nguyễn Văn A"
                                                 className="w-full pl-12 pr-4 py-4 bg-white border border-gold/20 rounded-xl focus:outline-none focus:border-gold transition-colors font-cormorant"
+                                                value={formData.name}
+                                                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                             />
                                         </div>
                                     </div>
@@ -49,7 +70,11 @@ export default function RSVP() {
                                         <label className="text-sm font-cormorant uppercase tracking-widest text-wine/70 ml-1">Số người tham dự</label>
                                         <div className="relative">
                                             <Users className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gold/50" />
-                                            <select className="w-full pl-12 pr-4 py-4 bg-white border border-gold/20 rounded-xl focus:outline-none focus:border-gold transition-colors font-cormorant appearance-none">
+                                            <select 
+                                                className="w-full pl-12 pr-4 py-4 bg-white border border-gold/20 rounded-xl focus:outline-none focus:border-gold transition-colors font-cormorant appearance-none"
+                                                value={formData.guests}
+                                                onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
+                                            >
                                                 <option>Đi 1 mình</option>
                                                 <option>Đi 2 người</option>
                                                 <option>Đi cùng gia đình</option>
@@ -66,6 +91,8 @@ export default function RSVP() {
                                             placeholder="Gửi lời chúc đến cô dâu chú rể..."
                                             rows={4}
                                             className="w-full pl-12 pr-4 py-4 bg-white border border-gold/20 rounded-xl focus:outline-none focus:border-gold transition-colors font-cormorant resize-none"
+                                            value={formData.message}
+                                            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                         />
                                     </div>
                                 </div>
@@ -84,6 +111,9 @@ export default function RSVP() {
                                         </>
                                     )}
                                 </button>
+                                {status === "error" && (
+                                    <p className="text-red-500 text-sm text-center">Có lỗi xảy ra, vui lòng thử lại sau.</p>
+                                )}
                             </motion.form>
                         ) : (
                             <motion.div
