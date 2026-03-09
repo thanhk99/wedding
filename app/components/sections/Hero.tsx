@@ -52,7 +52,7 @@ export default function Hero({ isActive = true }: { isActive?: boolean }) {
                     <img
                         src="/images/ảnh đầu tiên.jpg"
                         alt="Văn Cương & Thu Nụ"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-top"
                     />
                 </motion.div>
 

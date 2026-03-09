@@ -11,6 +11,7 @@ const milestones = [
         desc: "Hai ánh mắt chạm nhau lần đầu, lặng lẽ như một trang thơ mở ra...",
         img: "/images/DSC02860k.jpg",
         side: "left",
+        position: "center 20%",
     },
     {
         title: "Lời tỏ tình ấm áp",
@@ -18,6 +19,7 @@ const milestones = [
         desc: "Một buổi chiều thu, những lời chưa nói vội vã tìm được câu trả lời.",
         img: "/images/DSC03060k.jpg",
         side: "right",
+        position: "center 15%",
     },
     {
         title: "Cùg nhau khám phá",
@@ -25,6 +27,7 @@ const milestones = [
         desc: "Mỗi con đường dài thêm bởi tiếng cười, mỗi khoảnh khắc đẹp vì có nhau.",
         img: "/images/DSC03276k.jpg",
         side: "left",
+        position: "center 10%",
     },
     {
         title: "Hứa ước trọn đời",
@@ -32,6 +35,7 @@ const milestones = [
         desc: "Trước mặt đất trời, chúng mình nguyện cùng nhau đến cuối con đường này.",
         img: "/images/DSC03481k.jpg",
         side: "right",
+        position: "center 20%",
     },
 ];
 
@@ -67,6 +71,7 @@ function MilestoneCard({ item, index }: { item: typeof milestones[0]; index: num
                     alt={item.title}
                     fill
                     className="object-cover"
+                    style={{ objectPosition: item.position || "center" }}
                     sizes="(max-width: 768px) 45vw, 40vw"
                 />
                 {/* Gold border overlay */}

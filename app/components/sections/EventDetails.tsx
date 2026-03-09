@@ -20,8 +20,8 @@ export default function EventDetails() {
                 }
             ],
             locationName: "Tư Gia Nhà Trai",
-            locationAddress: "THÔN BẮC - XÃ VĂN LUÔNG - HUYỆN TÂN SƠN - TỈNH PHÚ THỌ",
-            mapLink: "https://maps.app.goo.gl/YourMapLink1"
+            locationAddress: "THÔN Thong - XÃ Thanh Liêm - Tỉnh Ninh Bình",
+            mapLink: "https://maps.app.goo.gl/9TWp6UogPBAiJr8Y7"
         },
         {
             type: "NHÀ GÁI" as const,
@@ -40,8 +40,8 @@ export default function EventDetails() {
                 }
             ],
             locationName: "Tư Gia Nhà Gái",
-            locationAddress: "XÓM ĐỒNG MỚI - XÃ ĐỒNG LẠC - HUYỆN YÊN LẬP - TỈNH PHÚ THỌ",
-            mapLink: "https://maps.app.goo.gl/YourMapLink2"
+            locationAddress: "Thôn Chè Trình - XÃ Thanh Liêm - Tỉnh Ninh Bình",
+            mapLink: "https://www.google.com/maps/place/20%C2%B025'49.7%22N+105%C2%B056'38.8%22E/@20.4300325,105.9445928,514m/data=!3m1!1e3!4m4!3m3!8m2!3d20.4304581!4d105.9441223?entry=ttu&g_ep=EgoyMDI2MDMwNC4xIKXMDSoASAFQAw%3D%3D"
         }
     ];
 

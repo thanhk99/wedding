@@ -8,11 +8,16 @@ export default function MusicPlayer() {
     const audioRef = useRef<HTMLAudioElement | null>(null);
 
     // Sử dụng một bản nhạc cưới không bản quyền làm mặc định
-    const audioUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3";
+    const audioUrl = "/Mãi Mãi Bên Nhau.mp3";
+    const encodedAudioUrl = encodeURI(audioUrl);
 
     useEffect(() => {
         if (audioRef.current) {
             audioRef.current.volume = 0.4;
+            // Tự động phát khi mount (vì MusicPlayer chỉ hiện sau khi nhấn Mở thiệp)
+            audioRef.current.play().then(() => {
+                setIsPlaying(true);
+            }).catch(err => console.log("Auto-play blocked", err));
         }
     }, []);
 
@@ -29,7 +34,7 @@ export default function MusicPlayer() {
 
     return (
         <div className="fixed bottom-6 left-6 z-[100]">
-            <audio ref={audioRef} src={audioUrl} loop />
+            <audio ref={audioRef} src={encodedAudioUrl} loop />
 
             <motion.button
                 onClick={togglePlay}
