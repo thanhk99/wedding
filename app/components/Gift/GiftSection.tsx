@@ -49,11 +49,10 @@ const GiftSection = () => {
             </div>
 
             <div className="relative group aspect-square mb-6 overflow-hidden rounded-2xl border-4 border-[#fdf8f5]">
-              <Image
+              <img
                 src="/images/qr.jfif"
                 alt="QR Code Mừng Cưới"
-                fill
-                className="object-contain p-2 transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
               />
             </div>
 
