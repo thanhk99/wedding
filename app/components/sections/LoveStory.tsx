@@ -7,7 +7,7 @@ import Image from "next/image";
 const milestones = [
     {
         title: "Lần đầu gặp gỡ",
-        date: "15/05/2021",
+        date: "11/11/2024",
         desc: "Hai ánh mắt chạm nhau lần đầu, lặng lẽ như một trang thơ mở ra...",
         img: "/images/DSC02860k.jpg",
         side: "left",
@@ -15,7 +15,7 @@ const milestones = [
     },
     {
         title: "Lời tỏ tình ấm áp",
-        date: "20/10/2022",
+        date: "15/03/2025",
         desc: "Một buổi chiều thu, những lời chưa nói vội vã tìm được câu trả lời.",
         img: "/images/DSC03060k.jpg",
         side: "right",
@@ -23,7 +23,7 @@ const milestones = [
     },
     {
         title: "Cùg nhau khám phá",
-        date: "01/01/2024",
+        date: "01/01/2026",
         desc: "Mỗi con đường dài thêm bởi tiếng cười, mỗi khoảnh khắc đẹp vì có nhau.",
         img: "/images/DSC03276k.jpg",
         side: "left",
@@ -58,13 +58,13 @@ function MilestoneCard({ item, index }: { item: typeof milestones[0]; index: num
     return (
         <div
             ref={ref}
-            className={`relative flex items-center gap-6 md:gap-12 ${item.side === "right" ? "flex-row-reverse" : "flex-row"
+            className={`relative flex flex-col md:flex-row items-center gap-6 md:gap-12 ${item.side === "right" ? "md:flex-row-reverse" : "md:flex-row"
                 }`}
         >
             {/* Ảnh */}
             <motion.div
                 style={{ x, opacity: cardOpacity, scale }}
-                className="relative w-[45%] md:w-[40%] aspect-[3/4] rounded-xl overflow-hidden shadow-2xl flex-shrink-0"
+                className="relative w-full md:w-[40%] aspect-[4/5] md:aspect-[3/4] rounded-xl overflow-hidden shadow-2xl flex-shrink-0"
             >
                 <Image
                     src={encodeURI(item.img)}
@@ -88,11 +88,11 @@ function MilestoneCard({ item, index }: { item: typeof milestones[0]; index: num
                     x: useTransform(
                         scrollYProgress,
                         [0, 1],
-                        [item.side === "left" ? 60 : -60, 0]
+                        [item.side === "left" ? 40 : -40, 0]
                     ),
                     opacity: cardOpacity,
                 }}
-                className="flex-1 py-6"
+                className="flex-1 py-1 md:py-6 text-center md:text-left"
             >
                 {/* Số thứ tự */}
                 <p className="text-gold/40 font-playfair text-6xl md:text-8xl font-bold leading-none mb-2 select-none">
@@ -101,8 +101,8 @@ function MilestoneCard({ item, index }: { item: typeof milestones[0]; index: num
                 <h3 className="text-2xl md:text-3xl font-playfair text-wine italic mb-3">
                     {item.title}
                 </h3>
-                <div className="w-12 h-[1px] bg-gold mb-4" />
-                <p className="text-wine/60 font-cormorant text-base md:text-lg leading-relaxed max-w-xs">
+                <div className="w-12 h-[1px] bg-gold mb-4 mx-auto md:mx-0" />
+                <p className="text-wine/60 font-cormorant text-base md:text-lg leading-relaxed max-w-xs mx-auto md:mx-0">
                     {item.desc}
                 </p>
             </motion.div>

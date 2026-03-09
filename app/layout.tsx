@@ -16,6 +16,24 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: "Văn Cương & Thu Nụ - Lễ Thành Hôn",
   description: "Thiệp cưới online của Văn Cương và Thu Nụ",
+  openGraph: {
+    title: "Văn Cương & Thu Nụ - Lễ Thành Hôn",
+    description: "Thiệp cưới online của Văn Cương và Thu Nụ",
+    images: [
+      {
+        url: "/images/ảnh đầu tiên.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Văn Cương & Thu Nụ Wedding",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Văn Cương & Thu Nụ - Lễ Thành Hôn",
+    description: "Thiệp cưới online của Văn Cương và Thu Nụ",
+    images: ["/images/icon.jpg"],
+  },
 };
 
 

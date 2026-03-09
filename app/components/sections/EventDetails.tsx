@@ -8,13 +8,13 @@ export default function EventDetails() {
             events: [
                 {
                     label: "BỮA CƠM THÂN MẬT",
-                    time: "10:00 - CHỦ NHẬT",
-                    date: "22.03.2026",
-                    lunarDate: "(TỨC NGÀY 04 THÁNG 02 NĂM BÍNH NGỌ)"
+                    time: "17:00 - THỨ BẢY",
+                    date: "21.03.2026",
+                    lunarDate: "(TỨC NGÀY 03 THÁNG 02 NĂM BÍNH NGỌ)"
                 },
                 {
                     label: "LỄ THÀNH HÔN",
-                    time: "13:30 - CHỦ NHẬT",
+                    time: "9:00 - CHỦ NHẬT",
                     date: "22.03.2026",
                     lunarDate: "(TỨC NGÀY 04 THÁNG 02 NĂM BÍNH NGỌ)"
                 }
@@ -28,7 +28,7 @@ export default function EventDetails() {
             events: [
                 {
                     label: "BỮA CƠM THÂN MẬT",
-                    time: "16:00 - THỨ BẢY",
+                    time: "17:00 - THỨ BẢY",
                     date: "21.03.2026",
                     lunarDate: "(TỨC NGÀY 03 THÁNG 02 NĂM BÍNH NGỌ)"
                 },

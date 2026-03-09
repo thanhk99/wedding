@@ -53,7 +53,7 @@ const GiftSection = () => {
                 src="/images/qr.jfif"
                 alt="QR Code Mừng Cưới"
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="object-contain p-2 transition-transform duration-500 group-hover:scale-105"
               />
             </div>
 
