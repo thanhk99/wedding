@@ -13,7 +13,6 @@ const Ending = dynamic(() => import("./components/sections/Ending"), { ssr: fals
 const EventDetails = dynamic(() => import("./components/sections/EventDetails"), { ssr: false });
 const LoveStory = dynamic(() => import("./components/sections/LoveStory"), { ssr: false });
 const Countdown = dynamic(() => import("./components/sections/Countdown"), { ssr: false });
-const RSVP = dynamic(() => import("./components/sections/RSVP"), { ssr: false });
 const GiftSection = dynamic(() => import("./components/Gift/GiftSection"), { ssr: false });
 
 
@@ -51,7 +50,7 @@ export default function Home() {
           >
             <Gallery />
             <GiftSection />
-            <RSVP />
+
 
             <Countdown />
 
